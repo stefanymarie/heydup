@@ -1,0 +1,22 @@
+---
+apiVersion: v1alpha1
+kind: Pipeline
+metadata:
+  name: heydup
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: heydup
+  template:
+    metadata:
+      name: heydup
+      labels:
+        app: heydup
+    stages:
+      - name: Echo Test
+        type: command
+        params:
+          command:
+            - echo
+            - "test"
